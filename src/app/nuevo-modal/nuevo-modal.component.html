@@ -1,2 +1,33 @@
-<p>nuevo-modal works!</p>
-<button>lfjnfd</button>
+<button (click)="closeModal()" class="btn" style="color: white; float: right;">Cerrar</button>
+
+<h4>Datos del viajero: </h4>
+<input class="form-control" style="width: 250px;" type="text" name="" id=""
+placeholder="Nombre y apellido">
+
+<hr>
+<h4>Datos del viaje:</h4>
+
+Destino:
+<select class="form-select" aria-label="Default select example" style="width: 200px; ">
+  <option selected></option>
+  <option value="1">Corrientes</option>
+  <option value="2">Buenos Aires</option>
+  <option value="3">Chaco</option>
+</select>
+
+Fecha:
+<input type="date" class="form-control" style="width: 250px;" id="start" name="trip-start" value="2022-09-29">
+
+<hr>
+<h4>Datos del vehículo:</h4>
+Tipo Vehiculo:
+<select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
+  <option selected></option>
+  <option value="1">Auto</option>
+  <option value="2">Moto</option>
+  <option value="3">Camión</option>
+</select>
+<input type="text" class="form-control" style="width: 250px;" name="" id="" placeholder="Patente">
+<input type="text" class="form-control" style="width: 250px;"  name="" id="" placeholder="Marca">
+<br>
+<button class="btn" style="background-color: white; color: blueviolet; "><b>GUARDAR</b></button>

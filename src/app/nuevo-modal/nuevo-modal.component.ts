@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwitchService } from '../services/switch.service';
 
 @Component({
   selector: 'app-nuevo-modal',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevoModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalSS: SwitchService) { }
 
   ngOnInit(): void {
+  }
+
+  closeModal(){
+    this.modalSS.$modal.emit(false);
   }
 
 }

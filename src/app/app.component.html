@@ -1,11 +1,16 @@
 <div class="container">
   <h2 style="margin-top: 20px; color: blueviolet;">Bienvenido a Viajeros APP</h2>
 
-  <div style="margin-top: 20px;">
-    <p style="display: inline;">Registre un nuevo viaje: </p>
-    <button class="btn btn-primary" >Nuevo viaje</button>
+  <div *ngIf="modalSwitch==true" 
+  style="position: absolute; width: 80%; padding:15px;
+  height:550px;background-color: blueviolet;">
     <app-nuevo-modal></app-nuevo-modal>
   </div>
+  <div style="margin-top: 20px;">
+    <p style="display: inline;">Registre un nuevo viaje: </p>
+    
+    <button class="btn " style="background-color: blueviolet; color: white;" (click)="openModal();">Nuevo viaje</button>
+  </div>  
 
   <div style="margin-top: 20px;">
     <b>Buscar viaje por: </b>
