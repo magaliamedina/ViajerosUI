@@ -1,28 +1,34 @@
 <div class="container">
-  <h2>Bienvenido a Viajeros APP</h2>
+  <h2 style="margin-top: 20px; color: blueviolet;">Bienvenido a Viajeros APP</h2>
 
-  <p>Registre su nuevo viaje: </p>
-  <button class="btn btn-primary">Nuevo viaje</button>
+  <div style="margin-top: 20px;">
+    <p style="display: inline;">Registre un nuevo viaje: </p>
+    <button class="btn btn-primary" >Nuevo viaje</button>
+    <app-nuevo-modal></app-nuevo-modal>
+  </div>
 
-  <br>
-  Buscar viaje por:
-  Fecha: 
-
-  Tipo Vehiculo:
-  <select class="form-select" aria-label="Default select example">
-    <option selected></option>
-    <option value="1">Auto</option>
-    <option value="2">Moto</option>
-    <option value="3">Camión</option>
-  </select>
-
-  Destino:
-  <select class="form-select" aria-label="Default select example">
-    <option selected></option>
-    <option value="1">Auto</option>
-    <option value="2">Moto</option>
-    <option value="3">Camión</option>
-  </select>
+  <div style="margin-top: 20px;">
+    <b>Buscar viaje por: </b>
+    Fecha: 
+    <input type="date" id="start" name="trip-start" value="2022-09-29">
+  
+    Tipo Vehiculo:
+    <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
+      <option selected></option>
+      <option value="1">Auto</option>
+      <option value="2">Moto</option>
+      <option value="3">Camión</option>
+    </select>
+  
+    Destino:
+    <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
+      <option selected></option>
+      <option value="1">Corrientes</option>
+      <option value="2">Buenos Aires</option>
+      <option value="3">Chaco</option>
+    </select>
+  </div>
+  
 </div>
 <!--<div class="container">
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -49,4 +55,3 @@
       </div>  
   </div> 
 </div>-->
-
