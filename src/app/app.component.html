@@ -6,6 +6,7 @@
   height:550px;background-color: blueviolet;">
     <app-nuevo-modal></app-nuevo-modal>
   </div>
+  
   <div style="margin-top: 20px;">
     <p style="display: inline;">Registre un nuevo viaje: </p>
     
@@ -15,17 +16,18 @@
   <div style="margin-top: 20px;">
     <b>Buscar viaje por: </b>
     Fecha: 
-    <input type="date" id="start" name="trip-start" value="2022-09-29">
+    <input type="date" id="start" name="trip-start" value="2022-09-29" style="margin-right: 30px;">
   
-    Tipo Vehiculo:
-    <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
+    Tipo de vehículo:
+    <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;
+    margin-right: 30px;">
       <option selected></option>
       <option value="1">Auto</option>
       <option value="2">Moto</option>
       <option value="3">Camión</option>
     </select>
   
-    Destino:
+    Ciudad de destino:
     <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
       <option selected></option>
       <option value="1">Corrientes</option>
@@ -33,30 +35,35 @@
       <option value="3">Chaco</option>
     </select>
   </div>
+
   
-</div>
-<!--<div class="container">
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-dark" style="margin-top: 1%;" type="button" routerLink="/pets/add">+ Add Pet</button>
-  </div>
+  
+</div> <!--fin de container-->
+
+<div class="container">
   <div style="display: flex;">
-      <div class="card" style="height: 640px; margin: 10px; width: 380px; border-radius: 5px; box-shadow: 2px 2px 5px 2px #888888;" *ngFor="let pet of pets">
-          <h5 class="card-header">
-              {{ pet.type }}
-          </h5>
-          <img src="https://static8.depositphotos.com/1057741/1041/i/950/depositphotos_10415184-stock-photo-golden-retriever-dog-sitting-on.jpg" class="card-img-top" style="height: 50%; width: fit-content; margin: auto;" alt="...">
-          <div class="card-body" >
-              <h5 class="card-title">{{ pet.name }} </h5>
-              <h6 class="card-subtitle mb-2">Number: {{ pet.petNumber }} </h6>
-              <p class="card-text">{{ pet.description }}</p>
-              <div class="text-end">
-                  <a href="#" class="btn btn-danger" style="margin: 5px;">Delete</a>
-                  <a href="#" class="btn btn-primary" style="margin: 5px;" routerLink="/pets/update" [queryParams]="{petId: pet.id}">Edit</a>    
-              </div>
-          </div>
-          <div class="card-footer">
-              {{ pet.dateOfBirth }}
-          </div>
-      </div>  
-  </div> 
-</div>-->
+    <div class="card" style="height: 640px; margin: 10px; width: 380px; border-radius: 5px; box-shadow: 2px 2px 5px 2px #888888;" *ngFor="let viaje of viajes">
+        <h5 class="card-header">
+           Ciudad de destino: {{ viaje.ciudad.nombre }}
+        </h5>
+        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/AN37GCPJHZG6TLSV7MRIZFLPGQ.jpg" class="card-img-top" style="height: 50%; width: 90%; margin: auto;" alt="...">
+        <div class="card-body" >
+            <h5 class="card-title">{{ viaje.name }} </h5>
+            <h6 class="card-subtitle mb-2">Nombre del viajero: {{ viaje.viajero.nombreYApellido }} </h6>
+            <p class="card-text">Tipo de vehiculo: {{ viaje.vehiculo.tipovehiculo }}</p>
+            <p class="card-text">Marca: {{ viaje.vehiculo.marca }}</p>
+            <p class="card-text">Patente: {{ viaje.vehiculo.patente }}</p>
+            Cantidad de días: {{ viaje.cantidadDias }}
+
+
+            <div class="text-end">
+                <a href="#" class="btn btn-danger" style="margin: 5px;">Cancelar</a>
+                <a href="#" class="btn" style="margin: 5px; background-color: blueviolet; color: white;" routerLink="/pets/update" >Reprogramar</a>    
+            </div>
+        </div> <!--fin de card-body-->
+        <div class="card-footer">
+          Fecha: {{ viaje.fecha }}
+        </div>
+    </div>  <!--fin de card-->
+  </div> <!--finnde card style-->
+</div>  

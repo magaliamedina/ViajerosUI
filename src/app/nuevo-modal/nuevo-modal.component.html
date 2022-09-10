@@ -7,8 +7,9 @@ placeholder="Nombre y apellido">
 <hr>
 <h4>Datos del viaje:</h4>
 
-Destino:
-<select class="form-select" aria-label="Default select example" style="width: 200px; ">
+Ciudad de destino:
+<select class="form-select" aria-label="Default select example" style="width: 200px; display: inline-block; 
+margin-right: 30px;">
   <option selected></option>
   <option value="1">Corrientes</option>
   <option value="2">Buenos Aires</option>
@@ -16,18 +17,31 @@ Destino:
 </select>
 
 Fecha:
-<input type="date" class="form-control" style="width: 250px;" id="start" name="trip-start" value="2022-09-29">
+<input type="date" class="form-control" style="width: 250px; display: inline-block;
+margin-right: 30px;" id="start" name="trip-start" value="2022-09-29">
+<br><br>
+
+Estado del tiempo:
+<input type="text" class="form-control" style="width: 250px;display: inline-block; margin-right: 30px;" value="Lluvioso" >
+
+Cantidad de días:
+<input type="number" name="" id="" maxlength="10" class="form-control" style="width: 250px;
+display: inline-block;">
+
 
 <hr>
 <h4>Datos del vehículo:</h4>
-Tipo Vehiculo:
-<select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
+Tipo de vehiculo:
+<select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;
+margin-right: 30px;">
   <option selected></option>
   <option value="1">Auto</option>
   <option value="2">Moto</option>
   <option value="3">Camión</option>
 </select>
-<input type="text" class="form-control" style="width: 250px;" name="" id="" placeholder="Patente">
-<input type="text" class="form-control" style="width: 250px;"  name="" id="" placeholder="Marca">
-<br>
-<button class="btn" style="background-color: white; color: blueviolet; "><b>GUARDAR</b></button>
+Patente:
+<input type="text" class="form-control" style="width: 250px; display: inline-block; margin-right: 30px;" name="" id="" placeholder="Patente">
+Marca:
+<input type="text" class="form-control" style="width: 250px; display: inline-block;"  name="" id="" placeholder="Marca">
+<br><br>
+<button class="btn" style="background-color: white; color: blueviolet; width: 200px;"><b>GUARDAR</b></button>

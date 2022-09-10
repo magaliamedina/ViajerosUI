@@ -3,15 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NuevoModalComponent } from './nuevo-modal/nuevo-modal.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NuevoModalComponent
+    
     ],
   imports: [
-    BrowserModule
-  ],
+    BrowserModule,
+    HttpClientModule  
+],
   providers: [],
   bootstrap: [AppComponent]
 })
