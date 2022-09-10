@@ -25,28 +25,33 @@
       <option value="1">Auto</option>
       <option value="2">Moto</option>
       <option value="3">Camión</option>
+      <option value="4">Moto</option>
+      <option value="5">Colectivo</option>
+      <option value="6">Avión</option>
+      <option value="7">Otro</option>
     </select>
   
     Ciudad de destino:
     <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
       <option selected></option>
-      <option value="1">Corrientes</option>
-      <option value="2">Buenos Aires</option>
-      <option value="3">Chaco</option>
+      <option selected></option>
+    <option value="1">Corrientes</option>
+    <option value="2">Buenos Aires</option>
+    <option value="3">Mendoza</option>
+    <option value="4">Misiones</option>
     </select>
+    <button class="btn" (click)="openModal();" style="display:inline">Buscar</button>
   </div>
 
-  
-  
-</div> <!--fin de container-->
-
-<div class="container">
   <div style="display: flex;">
-    <div class="card" style="height: 640px; margin: 10px; width: 380px; border-radius: 5px; box-shadow: 2px 2px 5px 2px #888888;" *ngFor="let viaje of viajes">
+    <!--class="card" -->
+    <div style="height: auto; margin-top: 20px; margin-right: 15px; width: 300px; border-radius: 5px; 
+    box-shadow: 2px 2px 5px 2px #888888; padding: 10px;" 
+    *ngFor="let viaje of viajes">
         <h5 class="card-header">
            Ciudad de destino: {{ viaje.ciudad.nombre }}
         </h5>
-        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/AN37GCPJHZG6TLSV7MRIZFLPGQ.jpg" class="card-img-top" style="height: 50%; width: 90%; margin: auto;" alt="...">
+        <!-- <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/AN37GCPJHZG6TLSV7MRIZFLPGQ.jpg" class="card-img-top" style="height: 50%; width: 90%; margin: auto;" alt="...">-->
         <div class="card-body" >
             <h5 class="card-title">{{ viaje.name }} </h5>
             <h6 class="card-subtitle mb-2">Nombre del viajero: {{ viaje.viajero.nombreYApellido }} </h6>
@@ -54,8 +59,6 @@
             <p class="card-text">Marca: {{ viaje.vehiculo.marca }}</p>
             <p class="card-text">Patente: {{ viaje.vehiculo.patente }}</p>
             Cantidad de días: {{ viaje.cantidadDias }}
-
-
             <div class="text-end">
                 <a href="#" class="btn btn-danger" style="margin: 5px;">Cancelar</a>
                 <a href="#" class="btn" style="margin: 5px; background-color: blueviolet; color: white;" routerLink="/pets/update" >Reprogramar</a>    
@@ -66,4 +69,6 @@
         </div>
     </div>  <!--fin de card-->
   </div> <!--finnde card style-->
-</div>  
+  
+</div> <!--fin de container-->
+

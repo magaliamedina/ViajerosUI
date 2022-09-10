@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NuevoModalComponent } from './nuevo-modal/nuevo-modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
     ],
   imports: [
     BrowserModule,
-    HttpClientModule  
+    HttpClientModule  ,    
+    ReactiveFormsModule, 
+    FormsModule
 ],
   providers: [],
   bootstrap: [AppComponent]

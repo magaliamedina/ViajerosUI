@@ -14,21 +14,14 @@ export class ViajesService {
     return this.httpClient.get(this.baseUrl);
   }
   
-  //GetPetsByBreed GET Breed
-  //GetPetsByBreedAndOwnerId GET Breed,OwnerID
-  //GetPetsVaccine GET PetID
-  //GetPetsByOwnerId GET OwnerID
-  //GetPetById GET PetID
-//   GetViajesById(id: number){
-//     return this.httpClient.get(this.baseUrl + id);
-//   }
+  GetViajesByCiudadId(id: number){
+    return this.httpClient.get(this.baseUrl +"/destino/"+ id);
+  }
 
-  //AddViaje POST Viaje
-//   AddViaje(viaje: any){
-//     var data: {};
-//     console.log(viaje);
-//     return this.httpClient.post(this.baseUrl, viaje);
-//   }
+  AddViaje(viaje: any){
+    var data: {};
+    return this.httpClient.post(this.baseUrl, viaje);
+  }
 
 
 //   //EditVaije PUT Vaije, ViajeID

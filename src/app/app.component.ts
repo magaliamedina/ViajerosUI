@@ -37,4 +37,16 @@ export class AppComponent implements OnInit{
     });
   }
 
+  GetViajesByCiudadId(){
+    this.viajesService.GetViajes().subscribe({
+      //next (paso exitoso)
+      next: (viajes) => { console.log(viajes); this.viajes = viajes; console.log(this.viajes) },
+      //nombre | (nombre) | () => { line1; line2 }
+      //error (paso erroneo)
+      error: (error) => { console.log(error); },
+      //complete (paso sí o sí)
+      complete: () => console.log("complete")
+    });
+  }
+
 }

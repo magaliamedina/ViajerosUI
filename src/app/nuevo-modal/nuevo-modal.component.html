@@ -1,47 +1,59 @@
 <button (click)="closeModal()" class="btn" style="color: white; float: right;">Cerrar</button>
 
-<h4>Datos del viajero: </h4>
-<input class="form-control" style="width: 250px;" type="text" name="" id=""
-placeholder="Nombre y apellido">
+<!--form class="register-form" [formGroup]="createViajeForm" (ngSubmit)="submit()"-->
+<form #viajesForm="ngForm">
+  <h4>Datos del viajero: </h4>
+  <input class="form-control" style="width: 250px;" type="text" #nombreYApellido="ngModel" name="nombreYApellido" id="" 
+  placeholder="Nombre y apellido" [(ngModel)]="viaje.viajero.nombreYApellido" required >
 
-<hr>
-<h4>Datos del viaje:</h4>
+  <hr>
+  <h4>Datos del viaje:</h4>
 
-Ciudad de destino:
-<select class="form-select" aria-label="Default select example" style="width: 200px; display: inline-block; 
-margin-right: 30px;">
-  <option selected></option>
-  <option value="1">Corrientes</option>
-  <option value="2">Buenos Aires</option>
-  <option value="3">Chaco</option>
-</select>
+  Ciudad de destino:
+  <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline-block; 
+  margin-right: 30px;"  [(ngModel)]="viaje.ciudadID" name="ciudadID" #ciudadID="ngModel">
+    <option selected></option>
+    <option value="1">Corrientes</option>
+    <option value="2">Buenos Aires</option>
+    <option value="3">Mendoza</option>
+    <option value="4">Misiones</option>
+  </select>
 
-Fecha:
-<input type="date" class="form-control" style="width: 250px; display: inline-block;
-margin-right: 30px;" id="start" name="trip-start" value="2022-09-29">
-<br><br>
+  Fecha:
+  <input type="date" class="form-control" style="width: 250px; display: inline-block;
+  margin-right: 30px;" id="start" name="fecha" value="2022-09-29"  #fecha="ngModel"
+  [(ngModel)]="viaje.fecha">
+  <br><br>
 
-Estado del tiempo:
-<input type="text" class="form-control" style="width: 250px;display: inline-block; margin-right: 30px;" value="Lluvioso" >
+  Estado del tiempo:
+  <input type="text" class="form-control" style="width: 250px;display: inline-block; margin-right: 30px;" >
 
-Cantidad de días:
-<input type="number" name="" id="" maxlength="10" class="form-control" style="width: 250px;
-display: inline-block;">
+  Cantidad de días:
+  <input type="number" name="cantidadDias" id="" maxlength="10" class="form-control" style="width: 250px;
+  display: inline-block;" required  [(ngModel)]="viaje.cantidadDias" #cantidadDias="ngModel">
 
 
-<hr>
-<h4>Datos del vehículo:</h4>
-Tipo de vehiculo:
-<select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;
-margin-right: 30px;">
-  <option selected></option>
-  <option value="1">Auto</option>
-  <option value="2">Moto</option>
-  <option value="3">Camión</option>
-</select>
-Patente:
-<input type="text" class="form-control" style="width: 250px; display: inline-block; margin-right: 30px;" name="" id="" placeholder="Patente">
-Marca:
-<input type="text" class="form-control" style="width: 250px; display: inline-block;"  name="" id="" placeholder="Marca">
-<br><br>
-<button class="btn" style="background-color: white; color: blueviolet; width: 200px;"><b>GUARDAR</b></button>
+  <hr>
+  <h4>Datos del vehículo:</h4>
+  Tipo de vehiculo:
+  <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;
+  margin-right: 30px;" [(ngModel)]="viaje.vehiculo.tipoVehiculoID" #tipoVehiculoID="ngModel" name="tipoVehiculoID">
+    <option selected></option>
+    <option value="1">Auto</option>
+    <option value="2">Moto</option>
+    <option value="3">Camión</option>
+    <option value="4">Moto</option>
+    <option value="5">Colectivo</option>
+    <option value="6">Avión</option>
+    <option value="7">Otro</option>
+  </select>
+  Patente:
+  <input type="text" class="form-control" style="width: 250px; display: inline-block; margin-right: 30px;" 
+  name="patente" id="" placeholder="Patente" required [(ngModel)]="viaje.vehiculo.patente" #patente="ngModel">
+  Marca:
+  <input type="text" class="form-control" style="width: 250px; display: inline-block;"  name="marca" id="" 
+  placeholder="Marca" required  [(ngModel)]="viaje.vehiculo.marca" #marca="ngModel">
+  <br><br>
+  <button class="btn" type="submit" style="background-color: white; color: blueviolet; width: 200px;"
+  (click)="submit(viajesForm)"><b>GUARDAR</b></button>
+</form> 
