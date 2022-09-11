@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   title = 'viajerosUI';
   modalSwitch:boolean;
   viajes: any;
-
+  opcionSeleccionado: number  = 0;
   constructor(private modalSS:SwitchService, private viajesService: ViajesService){
   }
 
@@ -38,13 +38,9 @@ export class AppComponent implements OnInit{
   }
 
   GetViajesByCiudadId(){
-    this.viajesService.GetViajes().subscribe({
-      //next (paso exitoso)
-      next: (viajes) => { console.log(viajes); this.viajes = viajes; console.log(this.viajes) },
-      //nombre | (nombre) | () => { line1; line2 }
-      //error (paso erroneo)
+    this.viajesService.GetViajesByCiudadId(this.opcionSeleccionado).subscribe({
+      next: (viajes) => { console.log(viajes); this.viajes = viajes;},
       error: (error) => { console.log(error); },
-      //complete (paso sí o sí)
       complete: () => console.log("complete")
     });
   }

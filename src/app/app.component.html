@@ -15,8 +15,9 @@
 
   <div style="margin-top: 20px;">
     <b>Buscar viaje por: </b>
+    <br>
     Fecha: 
-    <input type="date" id="start" name="trip-start" value="2022-09-29" style="margin-right: 30px;">
+    <input type="date" id="start" name="trip-start" style="margin-right: 30px;">
   
     Tipo de vehículo:
     <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;
@@ -32,7 +33,8 @@
     </select>
   
     Ciudad de destino:
-    <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;">
+    <select class="form-select" aria-label="Default select example" style="width: 200px; display: inline;"
+    [(ngModel)]="opcionSeleccionado">
       <option selected></option>
       <option selected></option>
     <option value="1">Corrientes</option>
@@ -40,7 +42,8 @@
     <option value="3">Mendoza</option>
     <option value="4">Misiones</option>
     </select>
-    <button class="btn" (click)="openModal();" style="display:inline">Buscar</button>
+    <button class="btn" (click)="GetViajesByCiudadId();" style="display:inline; font-weight: 700; color:blueviolet">
+      BUSCAR</button>
   </div>
 
   <div style="display: flex;">
@@ -51,7 +54,6 @@
         <h5 class="card-header">
            Ciudad de destino: {{ viaje.ciudad.nombre }}
         </h5>
-        <!-- <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/AN37GCPJHZG6TLSV7MRIZFLPGQ.jpg" class="card-img-top" style="height: 50%; width: 90%; margin: auto;" alt="...">-->
         <div class="card-body" >
             <h5 class="card-title">{{ viaje.name }} </h5>
             <h6 class="card-subtitle mb-2">Nombre del viajero: {{ viaje.viajero.nombreYApellido }} </h6>

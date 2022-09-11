@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup , Validators, FormBuilder, NgForm} from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import {  NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { SwitchService } from '../services/switch.service';
 import { ViajesService } from '../services/viajes.service';
@@ -12,7 +12,6 @@ import { peticionViaje } from '../interfaces/viajes.interface';
   styleUrls: ['./nuevo-modal.component.scss']
 })
 export class NuevoModalComponent implements OnInit {
-  //createViajeForm: FormGroup;
 
   viaje: peticionViaje = {
     viajero: {
@@ -36,7 +35,6 @@ export class NuevoModalComponent implements OnInit {
 
   constructor(
     private modalSS: SwitchService, 
-    private formBuilder: FormBuilder,
     private viajeService: ViajesService,
     private router: Router
    ) { }
@@ -54,14 +52,20 @@ export class NuevoModalComponent implements OnInit {
     //if(this.createViajeForm.valid) {
       this.viajeService.AddViaje(this.viaje).subscribe({
         //next (paso exitoso)
-        next: viaje => this.router.navigate(['/']),
+        next: viaje => this.insertadoCorrectamente(),
+        //this.router.navigate(['/']),
         //nombre | (nombre) | () => { line1; line2 }
         //error (paso erroneo)
         error: error => console.log(error),
         //complete (paso sí o sí)
         complete: () => console.log("complete")
       });
-      this.closeModal();
+  }
+
+  insertadoCorrectamente(){
+    alert("Vieje insertado correctamente");
+    this.closeModal();
+     this.router.navigate(['/']);
   }
 
 }
